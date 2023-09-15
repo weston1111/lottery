@@ -1,0 +1,20 @@
+for number, probability in sorted_probabilites
+    probability = normalizeNumber(number, probability)
+    
+
+function normalizeNumber(number, numberProbability)
+    lowProb = sorted_probabilities[probability].min()
+    highProb = sorted_probabilites[probability].max()
+
+    normalized = (numberProbability - lowProb)/(highProb - loweProb)
+    finalProb = normalized
+    return finalProb
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+The way I thought to fix this issue with balls 57-75 being skewed is by normalizing
+each number's probability. We can do this by looping through each number 1-75,
+subtracting the lowest number probability by the probability we are normalizing, 
+and then dividing that by the highest number probability by the lowest number 
+probability. Then we simply set our old probability of the number we are looping 
+through to the new normalized probability.
